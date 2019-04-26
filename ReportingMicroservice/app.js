@@ -1,5 +1,6 @@
 var express = require('express');
 var config = require('config');
+var path = require('path');
 
 var microserviceConfig = config.get('microservice.config');
 var app = express();
