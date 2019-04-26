@@ -16,7 +16,6 @@ app.get('/getreport',function(req,res){
     }).catch(function (err){
         res.send(err);
     })
-    res.send(model.GetReport(req,res));
 });
 
 app.get('/getcsv',function(req,res){
