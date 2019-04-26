@@ -2,6 +2,7 @@ var express = require('express');
 var config = require('config');
 
 var microserviceConfig = config.get('microservice.config');
+var app = express();
 
 //add view engine
 app.engine('pug', require('pug').__express)
@@ -11,7 +12,7 @@ app.set('view engine', 'pug');
 //instantiate reporting model
 var model = require('./models/reportingModel')
 
-var app = express()
+
 //Get Json reporting data by report name
 
 app.get('/', function(req,res){
