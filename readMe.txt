@@ -10,3 +10,11 @@ sudo apt-get update
 sudo apt-get install mongodb-org
 - create dirctory /data/db 
 run mongodb
+sudo service mongod start
+ sudo tail -f /var/log/mongodb/mongod.log
+
+ 
+Insert record to mongodb
+use reporting_microservice;
+switched to db reporting_microservice
+> db.sales.insertOne({"day":"MO","sales":348});
