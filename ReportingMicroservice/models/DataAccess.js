@@ -20,9 +20,9 @@ DataAccess.prototype.GetEntities = function(dbName, collectonName, query){
 		query = {};
 	}
 
-	return new Promise( function(fulfill, reject){	
+	return new Promise( function(resolve, reject){	
 		that.MongoClient.connect(that.DBConnectionString)
-		.then(function(db){
+		.then((db)=>{
 			var database = db.db(dbName);
 			var collection = database.collection(collectonName);
 
@@ -31,7 +31,7 @@ DataAccess.prototype.GetEntities = function(dbName, collectonName, query){
 				if(err){
 					reject(err);
 				} else {
-					fulfill(docs);
+					resolve(docs);
 				}
 			});
 		}).catch(function(err){
